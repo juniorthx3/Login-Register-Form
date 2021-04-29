@@ -1,0 +1,39 @@
+/* STYLES FOR THE REGISTER WINDOW */
+
+.container-register{
+    text-align: center;
+    border:2px solid #333;
+    padding:3rem 10rem;
+    border-radius: 6px;
+    box-shadow: 1px 0 5px 1px #333;
+    background:transparent;
+    width:30%;
+    height:500px;
+    position:absolute;
+    top:0;
+    right:29%;
+    transform:translate(10%, -60%);
+  }
+
+  .container-register .form-control label{
+    font-size:18px;
+    position: absolute;
+    left:25px;
+    z-index:-1;
+}
+
+.container-register .form-control label{
+    font-size:18px;
+}
+
+.container-register button{
+   width:300px;
+   position: absolute;
+   left:50%;
+   transform:translateX(-50%);
+   margin-top:50px;
+}
+
+.container-register h1{
+    width:190px;
+}

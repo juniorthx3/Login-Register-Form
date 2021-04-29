@@ -29,8 +29,54 @@ body:before{
 }
 
 .container{
-    display: flex;
-    justify-content: space-around;
-    padding:3rem;
+   display: flex;
+   width:100%;
+   position: relative;
+}
+
+
+button{
+    border:2px solid darkcyan;
+    margin:1rem auto;
+    padding:1rem 2rem;
+    background: transparent;
+    border-radius: 6px;
+    font-size:18px;
+    font-weight: bold;
+    cursor: pointer;
+    outline:none;
+    font-family: inherit;
+}
+
+button:hover{
+    color:#fff;
+    box-shadow: inset 0 0 0 30px darkcyan;
+    transform:translateX(5px);
+    transition: all 0.2s ease-in;
+}
+
+button:active{
+   transform:scale(0.80);
+}
+
+h1{
+    text-align: center;
+    text-shadow: 1px 1px 20px cyan;
+}
+
+input{
+    background:transparent;
+    outline:none;
+    border:0;
+    border-bottom: 2px solid #333;
+    font-family: inherit;
+    font-size:18px;
+    padding:3px 0;
+    width:250px;
+}
+
+.form-control input:focus,
+.form-control input:valid{
+    border-bottom-color: darkcyan;
 }
 
