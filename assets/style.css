@@ -12,6 +12,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    width:100%;
     height: 100vh;
     overflow: hidden;
 }
@@ -23,18 +24,76 @@ body:before{
     left:0;
     width:100%;
     height:100%;
-    background:url('./images/bg.jpg');
+    background:url('./images/bg.jpg') repeat 100%/cover;
     z-index:-10;
     filter: grayscale(80%);
 }
 
 .container{
    display: flex;
-   width:100%;
+   width:55%;
+   justify-content: space-between;
+   align-items: center;
    position: relative;
 }
 
+h1{
+    text-align: center;
+    text-shadow: 1px 1px 20px cyan;
+}
 
+input{
+    background:transparent;
+    outline:none;
+    border:0;
+    border-bottom: 2px solid #333;
+    font-family: inherit;
+    font-size:18px;
+    padding:3px 0;
+    width:250px;
+}
+
+
+/* ----- LOGIN FORM STYLES----- */
+.container-login{
+    border:2px solid #333;
+    padding:2rem 2rem;
+    border-radius: 6px;
+    box-shadow: 1px 0 5px 1px #333;
+    background:transparent;
+    text-align: center;
+  }
+  
+  .container-login .form-control{
+      position: relative;
+      margin:20px 0;
+      text-align: left;
+  }
+  
+  .container-login .form-control label{
+      font-size:18px;
+      position: absolute;
+      top:2px;
+      left:0;
+      z-index:-1;
+  }
+  
+  .container-login .form-control input:focus + label, 
+  .container-login .form-control input:valid + label{
+      color:darkcyan;
+      transform:translateY(-20px);
+      font-size:16px;
+  } 
+
+/* --------------------------------*/
+
+
+.container-login .form-control input:focus,
+.container-login .form-control input:valid{
+    border-bottom-color: darkcyan;
+}
+
+/* ----- BUTTON SYTLES---- */
 button{
     border:2px solid darkcyan;
     margin:1rem auto;
@@ -59,24 +118,111 @@ button:active{
    transform:scale(0.80);
 }
 
-h1{
-    text-align: center;
-    text-shadow: 1px 1px 20px cyan;
-}
+/* STYLES REGISTER FORM */
 
-input{
+.container-register{
+    border:2px solid #333;
+    padding:3rem 5rem;
+    border-radius: 6px;
+    box-shadow: 1px 0 5px 1px #333;
     background:transparent;
-    outline:none;
-    border:0;
-    border-bottom: 2px solid #333;
-    font-family: inherit;
-    font-size:18px;
-    padding:3px 0;
-    width:250px;
+    height:540px;
+    width:450px;
+  }
+
+.container-register .form-control{
+    position: relative;
+    margin:20px 0;
 }
 
-.form-control input:focus,
-.form-control input:valid{
+.container-register .form-control label{
+    font-size:18px;
+}
+
+.container-register input:focus{
     border-bottom-color: darkcyan;
+}
+
+.container-register button{
+   width:300px;
+}
+
+.container-register h1{
+    text-align: center;
+}
+
+/* MEDIA QUERY  */
+
+
+
+@media screen and (max-width:800px){
+    body{
+        height: 100%;
+        width: 100%;
+        overflow:visible;
+    }
+
+    body:before{
+        height:150%;
+        filter: grayscale(80%) opacity(15%)
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        top:20%;
+        width:20%;
+        padding-top:30px;
+    }
+    input{
+        font-size:14px;
+    }
+
+    .container-login{
+        padding:1rem 1rem;
+      }
+      
+      .container-login .form-control{
+          margin:40px 0;
+      }
+      
+      .container-login .form-control label{
+          font-size:16px;
+      }
+      
+      .container-login .form-control input:focus + label, 
+      .container-login .form-control input:valid + label{
+          font-size:14px;
+      } 
+
+      button{
+        border:2px solid darkcyan;
+        padding:0.5rem 1.5rem;
+        font-size:16px;
+    }
+
+
+    .container-register{
+        padding:1rem 2.5rem;
+        height:450px;
+        width:420px;
+      }
+    
+    
+    .container-register .form-control label{
+        font-size:14px;
+    }
+    
+    
+    .container-register button{
+       width:250px;
+    }
+    
+    .container-register h1{
+        text-align: center;
+    }
+
+
 }
 
